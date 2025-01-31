@@ -1,0 +1,59 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh; /* Высота контейнера на весь экран */
+}
+
+.vapour {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 11;
+    padding: 0 20px;
+}
+
+.vapour span {
+    position: relative;
+    align-items: center;
+    bottom: 50px;
+    display: block;
+    margin: 0 2px 50px;
+    min-width: 8px;
+    height: 120px;
+    background: #f9f9f9;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    opacity: 0;
+    filter: blur(8px);
+    animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0) scale(1);
+    }
+    15%
+    {
+        opacity: 1;;
+    }
+    50%
+    {
+        transform: translateY(-150px) scale(5);
+    }
+    95%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateY(-300px) scale(10);
+    }
+}
